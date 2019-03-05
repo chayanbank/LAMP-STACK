@@ -14,3 +14,4 @@ Database Configuration
     PASSWORD: [update the variable "mysql_root_password" in lamp-playbook.yml]
 
 Enjoy
+-----
