@@ -1,0 +1,8 @@
+---
+- hosts: local
+  roles:
+    - {role: apache2} 
+    - {role: mysql}
+    - {role: php}
+  vars:
+    mysql_root_password: "Dota4452@"

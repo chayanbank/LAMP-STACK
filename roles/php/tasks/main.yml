@@ -1,0 +1,21 @@
+---
+- name: update
+  apt:
+    update_cache: yes
+
+- name: Install php-fpm & php extensions
+  become: true
+  apt: pkg={{ item }} state=installed update_cache=true
+  with_items:
+  - php-fpm
+  - php-gd
+  - php-curl
+  - php-mysql
+  - php-dom
+  - php-xml
+
+- name: Configure php-fom with apache2
+  copy: src=www.conf dest=/etc/php/7.0/fpm/pool.d/
+
+- name: Restart php-fpm
+  service: name=php7.0-fpm state=restarted
