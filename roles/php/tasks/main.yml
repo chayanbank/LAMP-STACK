@@ -14,8 +14,13 @@
   - php-dom
   - php-xml
 
+- name: Enable php-fpm
+  command: systemctl enable php7.0-fpm
+
 - name: Configure php-fom with apache2
   copy: src=www.conf dest=/etc/php/7.0/fpm/pool.d/
 
 - name: Restart php-fpm
-  service: name=php7.0-fpm state=restarted
+  service: 
+    name: php7.0-fpm 
+    state: restarted

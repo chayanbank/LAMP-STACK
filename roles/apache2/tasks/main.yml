@@ -5,6 +5,9 @@
   - apache2
   - libapache2-mod-fastcgi
 
+- name: Enable apache2
+  command: systemctl enable apache2
+
 - name: Enable apache2 modules
   command: a2enmod rewrite actions alias fastcgi proxy_fcgi
 

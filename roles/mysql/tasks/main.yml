@@ -12,7 +12,7 @@
 
 - name : Ensure mysql started
   become: yes
-  service: name=mysql state=started enabled=yes
+  shell: systemctl enable mysql && service mysql start
 
 - name: Update MySQL root password for all root accounts
   mysql_user: name=root 
