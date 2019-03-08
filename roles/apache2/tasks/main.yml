@@ -21,5 +21,8 @@
 - name: Upload default index.php for host 
   copy: src=index.php dest=/var/www/html/ mode=0644  
 
+- name: Don't show version of apache2
+  copy: src=apache2.conf dest=/etc/apache2/apache2.conf
+
 - name: Restart webserver
   service: name=apache2 state=restarted

@@ -24,3 +24,9 @@
   service: 
     name: php7.0-fpm 
     state: restarted
+
+- name: Remove index.php (phpinfo)
+  ignore_errors: yes
+  file:
+    state: absent
+    path: "/var/www/html/index.php"
